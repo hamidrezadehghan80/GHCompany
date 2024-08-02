@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  /* Firefox */
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #707a8a;
+}
+
+:root {
+  font-size: 16px;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* *::-webkit-scrollbar-track:hover {
+  background-color: #B8C0C2;
+} */
+
+/* *::-webkit-scrollbar-track:active {
+  background-color: #B8C0C2;
+} */
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  width: 3px;
+  background-color: rgb(150, 153, 156);
+}
+
+/* *::-webkit-scrollbar-thumb:hover {
+  background-color: #B6B6B6;
+} */
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #b6b6b6;
+}
+
+.scrollbar-hide {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.scrollbar-hide::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
