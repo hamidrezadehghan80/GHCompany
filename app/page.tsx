@@ -1,3 +1,5 @@
-export default function MainPage() {
-  return <div className="">main page</div>;
+import MainPage from "@/components/main-page/main-page";
+
+export default function Page() {
+  return <MainPage />;
 }

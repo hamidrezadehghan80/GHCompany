@@ -3,18 +3,24 @@
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "sonner";
 
-import { useTheme } from "next-themes";
-import { Lato } from "next/font/google";
+import { Poppins } from "next/font/google";
 import { DirectionProvider } from "@radix-ui/react-direction";
 import { queryClient } from "@/libs/query-client";
 
-const font = Lato({ subsets: ["latin"], weight: ["300", "400", "700"] });
+const font = Poppins({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["300", "400", "500", "600"],
+  variable: "--poppins",
+});
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <QueryClientProvider client={queryClient}>
       <DirectionProvider dir="ltr">
-        <div className={`h-full w-full bg-neutral-50 text-neutral-900`}>
+        <div
+          className={`h-full w-full bg-neutral-50 text-neutral-900 ${font.className}`}
+        >
           {children}
         </div>
       </DirectionProvider>

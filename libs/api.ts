@@ -11,13 +11,6 @@ mainApiInstance.interceptors.response.use(
   },
   function (error) {
     const err = error.toJSON();
-
-    // if (err.status === 401) {
-    //   if (ProtectedRoutes.includes(window.location.pathname)) {
-    //     location.href = Routes.MainPage;
-    //   }
-    // }
-
     return Promise.reject(error);
   },
 );
