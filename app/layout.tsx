@@ -17,7 +17,7 @@ export default function RootLayout({
       <head>
         <link rel="shortcut icon" href="#" />
       </head>
-      <body className="h-full text-neutral-900">
+      <body className="h-full bg-neutral-50 text-neutral-700 dark:bg-neutral-900 dark:text-neutral-200">
         <Providers>{children}</Providers>
       </body>
     </html>

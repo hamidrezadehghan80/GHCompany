@@ -32,3 +32,19 @@ export const formatCrypto = (amount: number | string | undefined) => {
   if (typeof amount === "string") amount = +amount;
   return amount.toString();
 };
+
+export function getBigNumberAbbreviate(number: number, precision: number = 1) {
+  const abbr = ["M", "B", "T"];
+
+  let tier = (Math.log10(number) / 3) | 0;
+
+  if (tier === 2) tier = 2;
+  else if (tier < 2) return number;
+
+  const suffix = abbr[tier - 2];
+  const scale = Math.pow(10, tier * 3);
+
+  const scaled = number / scale;
+
+  return scaled.toFixed(precision) + suffix;
+}

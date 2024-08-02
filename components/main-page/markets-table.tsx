@@ -34,8 +34,8 @@ export default function MarketsTable() {
     <>
       <Table>
         <TableHeader>
-          <TableRow className="bg-neutral-200/70">
-            <TableHead>Symbol</TableHead>
+          <TableRow className="bg-neutral-200/70 dark:bg-neutral-800">
+            <TableHead>Market</TableHead>
             <TableHead className="text-end">Buy</TableHead>
             <TableHead className="text-end">Sell</TableHead>
             <TableHead className="text-end">24h Change</TableHead>

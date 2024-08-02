@@ -39,7 +39,7 @@ export default function MarketTableRow({
   }
 
   return (
-    <TableRow className="!h-12 font-semibold hover:bg-neutral-100">
+    <TableRow className="!h-12 font-semibold hover:bg-neutral-100 dark:hover:bg-neutral-800">
       <TableCell className="font-semibold">
         <button onClick={() => onSymbolClick(market)}>
           {baseSymbol}

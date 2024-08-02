@@ -33,7 +33,6 @@ const DialogContent = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <DialogPortal>
     <DialogOverlay />
-    {/* <div className="fixed inset-0 z-50 bg-neutral-50/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 dark:bg-neutral-950/80"> */}
     <DialogPrimitive.Content
       ref={ref}
       className={cn(
@@ -48,7 +47,6 @@ const DialogContent = React.forwardRef<
         <span className="sr-only">Close</span>
       </DialogPrimitive.Close>
     </DialogPrimitive.Content>
-    {/* </div> */}
   </DialogPortal>
 ));
 DialogContent.displayName = DialogPrimitive.Content.displayName;
