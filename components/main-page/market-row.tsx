@@ -2,9 +2,7 @@ import { TableCell, TableRow } from "@/components/ui/table";
 import { marketsHooks } from "@/libs/endpoints/markets-endpoints";
 import { formatCurrency } from "@/libs/utils";
 import DisplayPercent from "../common/display-percent";
-import { Skeleton } from "../ui/skeleton";
 import MarketRowSkeleton from "./market-row-skeleton";
-import { useState } from "react";
 import { IMarket } from "@/libs/endpoints/markets-schema";
 
 export default function MarketTableRow({
@@ -20,9 +18,9 @@ export default function MarketTableRow({
         symbol: `${symbol}-USDT`,
       },
     },
-    // {
-    //   refetchInterval: 5000,
-    // },
+    {
+      refetchInterval: 5000,
+    },
   );
 
   const market = data?.data;
@@ -35,7 +33,7 @@ export default function MarketTableRow({
   }
 
   if (error || !market) {
-    return <div>{error?.message || "Some thing went wrong!"}</div>;
+    return <div>{error?.message || "Something went wrong!"}</div>;
   }
 
   return (

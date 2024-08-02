@@ -5,6 +5,7 @@ import { Poppins } from "next/font/google";
 import { DirectionProvider } from "@radix-ui/react-direction";
 import { queryClient } from "@/libs/query-client";
 import { ThemeProvider } from "./theme-provider";
+import ClientSideRendering from "./client-side-rendering";
 
 const font = Poppins({
   subsets: ["latin"],
@@ -15,20 +16,22 @@ const font = Poppins({
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <QueryClientProvider client={queryClient}>
-      <DirectionProvider dir="ltr">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          disableTransitionOnChange
-        >
-          <div
-            className={`h-full w-full bg-neutral-50 text-neutral-700 dark:bg-neutral-900 dark:text-neutral-200 ${font.className}`}
+    <ClientSideRendering>
+      <QueryClientProvider client={queryClient}>
+        <DirectionProvider dir="ltr">
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            disableTransitionOnChange
           >
-            {children}
-          </div>
-        </ThemeProvider>
-      </DirectionProvider>
-    </QueryClientProvider>
+            <div
+              className={`h-full w-full bg-neutral-50 text-neutral-700 dark:bg-neutral-900 dark:text-neutral-200 ${font.className}`}
+            >
+              {children}
+            </div>
+          </ThemeProvider>
+        </DirectionProvider>
+      </QueryClientProvider>
+    </ClientSideRendering>
   );
 }

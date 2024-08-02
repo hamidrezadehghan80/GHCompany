@@ -22,13 +22,13 @@ export default function DisplayPercent({
   }
 
   return (
-    <div
+    <span
       className={`${colorClass} ${className} rtl:text-right rtl:[direction:ltr]`}
     >
       {beforeText}
       {+number > 0 ? "+" : ""}
       {number}
       {nextText}
-    </div>
+    </span>
   );
 }

@@ -10,7 +10,7 @@ export default function MainPage() {
   return (
     <div className="container flex flex-col py-8">
       <div className="flex w-full items-center justify-between">
-        <h1 className="text-3xl font-bold">
+        <h1 className="text-lg font-bold md:text-3xl">
           <span className="me-1 text-primary-500">GH Company</span>
           Test Project
         </h1>
@@ -26,9 +26,11 @@ export default function MainPage() {
         )}
       </div>
 
-      <h2 className="mt-4 text-2xl font-semibold">kucoin Markets</h2>
+      <h2 className="mt-4 text-base font-semibold md:text-2xl">
+        kucoin Markets
+      </h2>
 
-      <div className="mt-10">
+      <div className="mt-4 md:mt-10">
         <MarketsTable />
       </div>
     </div>

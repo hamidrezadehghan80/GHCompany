@@ -57,22 +57,22 @@ export default function MarketDetailsDialog({
         </div>
         <div className="flex items-center justify-between gap-4">
           <p>Change</p>
-          <p>
+          <div>
             <DisplayPercent
               number={formatCurrency(market.changePrice) + ""}
               className="inline"
             />
             <span className="ms-1 text-xs text-neutral-500">USDT</span>
-          </p>
+          </div>
         </div>
         <div className="flex items-center justify-between gap-4">
           <p>Change Rate</p>
-          <p>
+          <div>
             <DisplayPercent
               number={formatCurrency(market.changeRate) + ""}
               nextText="%"
             />
-          </p>
+          </div>
         </div>
 
         <div className="flex items-center justify-between gap-4">
