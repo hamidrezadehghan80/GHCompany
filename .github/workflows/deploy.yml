@@ -14,9 +14,8 @@ jobs:
         env:
           NEXT_PUBLIC_BASE_PATH: /your-repo-name
         run: |
-          npm ci
+          npm i
           npm run build
-          npm run export
           touch out/.nojekyll
 
       - name: Deploy
