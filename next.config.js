@@ -4,12 +4,7 @@ const nextConfig = {
     BASE_API_URL: process.env.BASE_API_URL,
   },
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "aaaaaaaaaaaaaaaaaaaaaaaa.storage.iran.liara.space",
-      },
-    ],
+    remotePatterns: [],
   },
 };
 
