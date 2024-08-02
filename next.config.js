@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH,
+  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH,
   env: {
-    BASE_API_URL: process.env.BASE_API_URL,
+    BASE_API_URL: "https://api.kucoin.com/api/v1",
   },
   images: {
     remotePatterns: [],
