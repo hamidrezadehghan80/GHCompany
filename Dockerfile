@@ -1,13 +1,13 @@
-FROM node:20.11.1-alpine3.19 AS builder
+FROM node
 
 WORKDIR /app
 
-COPY package*.json /app/
+COPY package*.json ./
 
-RUN npm install
+RUN npm i
 
 COPY . .
 
-RUN npm run build
+EXPOSE 3000
 
-CMD ["npm","start", "--", "-p", "80"]
+CMD npm run dev
